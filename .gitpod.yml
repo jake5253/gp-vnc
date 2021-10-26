@@ -5,3 +5,4 @@ ports:
 tasks:
 - init: >
     git clone https://gitlab.com/qemu-project/qemu.git
+- command: gp preview $(gp url 6080)
