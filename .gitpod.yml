@@ -1,0 +1,12 @@
+image:
+  file: Dockerfile
+ports:
+- port: 6080
+tasks:
+- init: >
+    git clone https://gitlab.com/qemu-project/qemu.git &&
+    cd qemu &&
+    git submodule init &&
+    git submodule update --recursive &&
+    ./configure --target-list=x86_64-softmmu,x86_64-linux-user
+  command: make -j$(nproc)
