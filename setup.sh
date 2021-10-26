@@ -1,7 +1,4 @@
 #!/bin/bash
-FROM gitpod/workspace-full-vnc
-
-USER root
 
 # Install dependencies
 sudo apt-get update \
@@ -36,3 +33,10 @@ sudo apt-get update \
  libnfs-dev \
  libiscsi-dev \
  && sudo apt-get clean && sudo rm -rf /var/cache/apt/* && sudo rm -rf /var/lib/apt/lists/* && sudo rm -rf /tmp/*
+
+
+ cd qemu && \
+ git submodule init && \
+ git submodule update --recursive && \ 
+ ./configure --target-list=x86_64-softmmu,x86_64-linux-user && \
+  make -j$(nproc)
