@@ -11,7 +11,7 @@ RUN apt-get update \
  libcap-dev \
  libcap-ng-dev \
  libcurl4-gnutls-dev \
- libgtk-3-dev
+ libgtk-3-dev \
  libibverbs-dev \
  libjpeg8-dev \
  libncurses5-dev \
@@ -22,7 +22,7 @@ RUN apt-get update \
  libsdl1.2-dev \
  libseccomp-dev \
  libsnappy-dev \
- libssh2-1-dev\
+ libssh2-1-dev \
  libvde-dev \
  libvdeplug-dev \
  libvte-2.90-dev \
