@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Install dependencies
-sudo apt-get update \
- && sudo apt-get install -y \
- build-essential  \
+sudo apt-get update
+sudo apt-get install -y \
+ build-essential \
  libaio-dev \
  libbluetooth-dev \
  libbrlapi-dev \
@@ -31,12 +31,17 @@ sudo apt-get update \
  valgrind \
  xfslibs-dev \
  libnfs-dev \
- libiscsi-dev \
- && sudo apt-get clean && sudo rm -rf /var/cache/apt/* && sudo rm -rf /var/lib/apt/lists/* && sudo rm -rf /tmp/*
+ libiscsi-dev
+ 
+sudo apt-get clean
+sudo rm -rf /var/cache/apt/*
+sudo rm -rf /var/lib/apt/lists/*
+sudo rm -rf /tmp/*
 
 
- cd qemu && \
- git submodule init && \
- git submodule update --recursive && \ 
- ./configure --target-list=x86_64-softmmu,x86_64-linux-user && \
-  make -j$(nproc)
+cd qemu
+git submodule init
+git submodule update --recursive
+./configure --target-list=x86_64-softmmu,x86_64-linux-user
+make -j$(nproc)
+sudo make install
