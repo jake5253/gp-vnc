@@ -42,6 +42,6 @@ sudo rm -rf /tmp/*
 cd qemu
 git submodule init
 git submodule update --recursive
-./configure --target-list=x86_64-softmmu,x86_64-linux-user
+./configure --target-list=x86_64-softmmu,x86_64-linux-user --enable-docs --enable-vnc --enable-pie  --enable-system --enable-user --enable-linux-user --disable-sdl --static --disable-bsd-user
 make -j$(nproc)
 sudo make install
