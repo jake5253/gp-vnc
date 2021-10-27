@@ -31,7 +31,7 @@ sudo apt-get install -y \
  valgrind \
  xfslibs-dev \
  libnfs-dev \
- libiscsi-dev
+ libiscsi-dev || { echo "Installing dependencies failed. Abort"; exit; }
  
 sudo apt-get clean
 sudo rm -rf /var/cache/apt/*
