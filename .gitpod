@@ -5,6 +5,5 @@ ports:
     protocol: "http"
 tasks:
 - init: >
-    start-vnc-session.sh &
     git clone https://gitlab.com/qemu-project/qemu.git && exit
-- command: gp preview $(gp url 6080) && sleep 2 && clear
+- command: start-vnc-session.sh & gp preview $(gp url 6080) && sleep 2 && clear
