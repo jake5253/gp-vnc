@@ -1,7 +1,8 @@
 image:
   file: Dockerfile
 ports:
-- port: 6080
+  - port: 6080
+    protocol: "http"
 tasks:
 - init: >
     git clone https://gitlab.com/qemu-project/qemu.git && exit
