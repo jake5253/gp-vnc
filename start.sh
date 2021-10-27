@@ -13,8 +13,9 @@ qemu-system-x86_64 \
  -netdev user,id=net0 \
  -device vmxnet3,netdev=net0,id=net0,mac=52:54:00:09:49:17 \
  -drive id=sda,if=virtio,format=qcow2,file=disk.img \
- -drive id=cd,if=virtio,format=raw,file=ubuntu-16.04.7-server-amd64.iso \
+ -cdrom ubuntu-16.04.7-server-amd64.iso \
  -drive if=pflash,format=raw,readonly,file="OVMF_CODE.fd" \
  -drive if=pflash,format=raw,file="OVMF_VARS-1024x768.fd" \
  -boot menu=on \
- -machine q35
+ -machine q35 \
+ -cpu max
