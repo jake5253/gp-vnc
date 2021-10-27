@@ -25,7 +25,7 @@ sudo apt-get install -y \
  libssh2-1-dev \
  libvde-dev \
  libvdeplug-dev \
- libvte-2.90-dev \
+ libvte-2.91-dev \
  libxen-dev \
  liblzo2-dev \
  valgrind \
