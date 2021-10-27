@@ -1,4 +1,8 @@
 #!/bin/bash
+function aptfail() {
+    echo "Installing dependencies failed. Abort";
+    exit 1;
+}
 
 # Install dependencies
 sudo apt-get update
@@ -31,7 +35,7 @@ sudo apt-get install -y \
  valgrind \
  xfslibs-dev \
  libnfs-dev \
- libiscsi-dev || { echo "Installing dependencies failed. Abort"; exit; }
+ libiscsi-dev || aptfail
  
 sudo apt-get clean
 sudo rm -rf /var/cache/apt/*
