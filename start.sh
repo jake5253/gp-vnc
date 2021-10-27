@@ -16,4 +16,5 @@ qemu-system-x86_64 \
  -drive id=cd,if=virtio,format=raw,file=ubuntu-16.04.7-server-amd64.iso \
  -drive if=pflash,format=raw,readonly,file="OVMF_CODE.fd" \
  -drive if=pflash,format=raw,file="OVMF_VARS-1024x768.fd" \
- -boot menu=on
+ -boot menu=on \
+ -machine q35
