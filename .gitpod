@@ -5,5 +5,6 @@ ports:
     protocol: "http"
 tasks:
 - init: >
-    git clone https://gitlab.com/qemu-project/qemu.git && exit
-- command: start-vnc-session.sh & gp preview $(gp url 6080) && sleep 2 && clear
+    sudo apt update &&
+    sudo apt install -y qemu-kvm
+- command: start-vnc-session.sh & gp preview $(gp url 6080) && clear && bash ./start.sh &
